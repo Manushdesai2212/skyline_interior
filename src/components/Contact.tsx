@@ -7,6 +7,16 @@ import { Phone, Mail, MapPin, Clock, Check, AlertCircle, Loader } from 'lucide-r
 import { contactFormSchema, ContactFormData } from '@/lib/formSchema'
 import { BUSINESS_PHONE, BUSINESS_PHONE_HREF, BUSINESS_EMAIL, BUSINESS_ADDRESS, BUSINESS_MAP_EMBED_URL, WORKING_HOURS } from '@/lib/constants'
 
+const PROJECT_TYPE_LABELS: Record<ContactFormData['projectType'], string> = {
+  residential: 'Residential',
+  commercial: 'Commercial',
+  architecture: 'Architecture',
+  set_design: 'Set Design',
+  landscape: 'Landscape Work',
+  renovation: 'Renovation',
+  other: 'Other',
+}
+
 export default function Contact() {
   const { ref, inView } = useInView({ triggerOnce: true })
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -23,8 +33,22 @@ export default function Contact() {
   const onSubmit = async (data: ContactFormData) => {
     setSubmitStatus('loading')
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      void data
+      const subject = `New consultation inquiry from ${data.name}`
+      const body = [
+        'Hello Skyline Interior,',
+        '',
+        'I would like to discuss an interior design project.',
+        '',
+        `Name: ${data.name}`,
+        `Email: ${data.email}`,
+        `Phone: ${data.phone}`,
+        `Project Type: ${PROJECT_TYPE_LABELS[data.projectType]}`,
+        '',
+        'Message:',
+        data.message,
+      ].join('\n')
+
+      window.location.href = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
       setSubmitStatus('success')
       reset()
       setTimeout(() => setSubmitStatus('idle'), 3000)
@@ -126,7 +150,7 @@ export default function Contact() {
                 {submitStatus === 'success' && (
                   <>
                     <Check className="w-5 h-5" />
-                    Message Sent!
+                    Email Draft Opened
                   </>
                 )}
                 {submitStatus === 'error' && (

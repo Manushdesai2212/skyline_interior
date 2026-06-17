@@ -1,31 +1,16 @@
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react'
-import { TESTIMONIALS } from '@/lib/constants'
+import { ExternalLink, Star } from 'lucide-react'
+import { GOOGLE_RATING, GOOGLE_REVIEWS } from '@/lib/constants'
+
+const GOOGLE_MAPS_URL =
+  'https://www.google.com/maps/place/Skyline+Interior/@22.1618508,72.8441906,15z/data=!4m6!3m5!1s0x395c2a140597b4b1:0x86b0c581889e7fa3!8m2!3d22.1618508!4d72.863245!16s%2Fg%2F11gdmm94lf'
+
+const GOOGLE_REVIEW_URL =
+  'https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID'
 
 export default function Testimonials() {
   const { ref, inView } = useInView({ triggerOnce: true })
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [autoPlay, setAutoPlay] = useState(true)
-
-  useEffect(() => {
-    if (!autoPlay) return
-    const timer = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % TESTIMONIALS.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [autoPlay])
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % TESTIMONIALS.length)
-    setAutoPlay(false)
-  }
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)
-    setAutoPlay(false)
-  }
 
   return (
     <section id="testimonials" className="section-padding bg-bg dark:bg-bg-dark">
@@ -34,87 +19,58 @@ export default function Testimonials() {
           ref={ref}
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          className="text-center mb-16"
+          className="mx-auto max-w-4xl text-center"
         >
-          <div className="eyebrow-text mb-4">Testimonials</div>
-          <h2 className="heading-lg">What Our Clients Say</h2>
-        </motion.div>
+          <div className="eyebrow-text mb-4">Reviews</div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          onMouseEnter={() => setAutoPlay(false)}
-          onMouseLeave={() => setAutoPlay(true)}
-          className="relative max-w-2xl mx-auto"
-        >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="card-base text-center p-8"
-            >
-              <div className="flex justify-center gap-1 mb-4">
-                {Array.from({ length: TESTIMONIALS[currentIndex].rating }).map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-accent-primary text-accent-primary" />
-                ))}
-              </div>
-
-              <p className="text-lg mb-6 italic text-text-muted dark:text-text-muted-dark">
-                "{TESTIMONIALS[currentIndex].quote}"
-              </p>
-
-              <div className="flex items-center justify-center gap-4">
-                <img
-                  src={TESTIMONIALS[currentIndex].avatar}
-                  alt={TESTIMONIALS[currentIndex].name}
-                  className="w-16 h-16 rounded-full object-cover"
+          <div className="mb-6 inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-border bg-surface px-5 py-2 text-sm font-semibold text-text-primary shadow-sm dark:border-border-dark dark:bg-surface-dark dark:text-text-primary-dark">
+            <span className="flex items-center gap-0.5" aria-label={`${GOOGLE_RATING} stars rated on Google`}>
+              {Array.from({ length: 5 }).map((_, index) => (
+                <Star
+                  key={index}
+                  className={`h-4 w-4 ${
+                    index < 4
+                      ? 'fill-accent-primary text-accent-primary'
+                      : 'fill-accent-primary/70 text-accent-primary'
+                  }`}
                 />
-                <div className="text-left">
-                  <p className="font-semibold">{TESTIMONIALS[currentIndex].name}</p>
-                  <p className="text-sm text-text-muted dark:text-text-muted-dark">
-                    {TESTIMONIALS[currentIndex].project}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 p-2 rounded-full bg-accent-primary/10 hover:bg-accent-primary/20"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 p-2 rounded-full bg-accent-primary/10 hover:bg-accent-primary/20"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-
-          {/* Indicators */}
-          <div className="flex justify-center gap-2 mt-8">
-            {TESTIMONIALS.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setCurrentIndex(index)
-                  setAutoPlay(false)
-                }}
-                className={`transition-all ${
-                  index === currentIndex
-                    ? 'w-8 h-2 bg-accent-primary'
-                    : 'w-2 h-2 bg-accent-primary/30 hover:bg-accent-primary/50'
-                } rounded-full`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
+              ))}
+            </span>
+            <span>{GOOGLE_RATING} Rated on Google</span>
+            <span className="text-text-muted dark:text-text-muted-dark">·</span>
+            <span>{GOOGLE_REVIEWS} Reviews</span>
           </div>
+
+          <h2 className="heading-lg mb-4">See what our clients are saying</h2>
+          <p className="body-text mx-auto mb-8 max-w-2xl">
+            Read real Google feedback from homeowners and businesses who have worked with Skyline Interior.
+          </p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="card-base mx-auto flex max-w-2xl flex-col items-center gap-4 p-6 sm:flex-row sm:justify-center"
+          >
+            <a
+              href={GOOGLE_MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-primary w-full gap-2 sm:w-auto"
+            >
+              Read our reviews on Google
+              <ExternalLink className="h-4 w-4" />
+            </a>
+            <a
+              href={GOOGLE_REVIEW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-secondary w-full gap-2 sm:w-auto"
+            >
+              Leave us a review
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </motion.div>
         </motion.div>
       </div>
     </section>

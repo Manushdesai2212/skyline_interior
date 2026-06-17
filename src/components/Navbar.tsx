@@ -76,9 +76,9 @@ export default function Navbar() {
         {/* Right Actions */}
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <button className="hidden sm:block button-primary py-2 px-4 text-sm">
+          <a href="#contact" className="hidden sm:flex button-primary py-2 px-4 text-sm">
             Free Consultation
-          </button>
+          </a>
 
           {/* Mobile Menu Button */}
           <button
@@ -110,7 +110,13 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <button className="button-primary w-full mt-4">Free Consultation</button>
+            <a
+              href="#contact"
+              onClick={() => setIsOpen(false)}
+              className="button-primary w-full mt-4"
+            >
+              Free Consultation
+            </a>
           </div>
         </motion.div>
       )}

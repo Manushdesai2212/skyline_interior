@@ -55,18 +55,12 @@ export const PROCESS_STEPS = [
 export const PORTFOLIO_CATEGORIES = ["All", "Living Room", "Bedroom", "Kitchen", "Office", "Bathroom"]
 
 export const PORTFOLIO_PROJECTS = [
-  { id: 1, title: "Modern Living Room", category: "Living Room", image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" },
-  { id: 2, title: "Luxe Bedroom", category: "Bedroom", image: "https://images.unsplash.com/photo-1540932239986-310128078ceb?w=600&h=400&fit=crop" },
-  { id: 3, title: "Contemporary Kitchen", category: "Kitchen", image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" },
-  { id: 4, title: "Executive Office", category: "Office", image: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&h=400&fit=crop" },
-  { id: 5, title: "Spa Bathroom", category: "Bathroom", image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop" },
-  { id: 6, title: "Minimalist Living", category: "Living Room", image: "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=600&h=400&fit=crop" },
-  { id: 7, title: "Cozy Bedroom Nook", category: "Bedroom", image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&h=400&fit=crop" },
-  { id: 8, title: "Smart Kitchen", category: "Kitchen", image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" },
-  { id: 9, title: "Creative Studio", category: "Office", image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop" },
-  { id: 10, title: "Luxury Bathroom", category: "Bathroom", image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop" },
-  { id: 11, title: "Scandinavian Living", category: "Living Room", image: "https://images.unsplash.com/photo-1512917774080-9a485d112a8e?w=600&h=400&fit=crop" },
-  { id: 12, title: "Master Suite", category: "Bedroom", image: "https://images.unsplash.com/photo-1540932239986-310128078ceb?w=600&h=400&fit=crop" },
+  { id: 1, title: "Modern Living Room", category: "Living Room", image: "/images/living_room.webp" },
+  { id: 2, title: "Elegant Living Space", category: "Living Room", image: "/images/living_room2.webp" },
+  { id: 3, title: "Contemporary Lounge", category: "Living Room", image: "/images/living_room3.webp" },
+  { id: 4, title: "Serene Bedroom", category: "Bedroom", image: "/images/bedroom.webp" },
+  { id: 5, title: "Master Bedroom", category: "Bedroom", image: "/images/bedroom2.webp" },
+  { id: 6, title: "Modular Kitchen", category: "Kitchen", image: "/images/kitchen.webp" },
 ]
 
 export const STATS = [
