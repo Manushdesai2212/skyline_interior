@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg text-text-primary transition-colors duration-300;
+    font-feature-settings: 'rlig' 1 'calt' 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html.dark {
+    @apply bg-bg-dark text-text-primary-dark;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-primary to-accent-tertiary bg-clip-text text-transparent;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-2xl font-semibold text-white bg-accent-primary hover:bg-accent-primary/90 transition-all duration-200 hover:shadow-lg hover:scale-105;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-2xl font-semibold text-accent-primary bg-accent-primary/10 hover:bg-accent-primary/20 transition-all duration-200 hover:shadow-md;
+  }
+
+  .card-base {
+    @apply bg-surface dark:bg-surface-dark border border-border dark:border-border-dark rounded-2xl p-6 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply card-base hover:shadow-lg hover:scale-105 hover:border-accent-primary/50;
+  }
+
+  .heading-xl {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight;
+  }
+
+  .heading-lg {
+    @apply text-3xl sm:text-4xl font-serif font-bold;
+  }
+
+  .heading-md {
+    @apply text-2xl sm:text-3xl font-serif font-semibold;
+  }
+
+  .heading-sm {
+    @apply text-xl sm:text-2xl font-serif font-semibold;
+  }
+
+  .body-text {
+    @apply text-lg text-text-muted dark:text-text-muted-dark leading-relaxed;
+  }
+
+  .eyebrow-text {
+    @apply text-sm font-semibold uppercase tracking-widest text-accent-primary;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(20px, -50px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  75% {
+    transform: translate(50px, 50px) scale(1.05);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.5s ease-out;
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+}
