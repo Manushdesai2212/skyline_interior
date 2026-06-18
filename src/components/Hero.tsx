@@ -45,7 +45,7 @@ export default function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        className="container-max relative z-10 grid items-center gap-12 px-4 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:text-left"
+        className="container-max relative z-10 grid grid-cols-1 items-center gap-10 px-4 py-12 sm:gap-12 sm:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:text-left"
       >
         <div>
           <motion.div variants={itemVariants} className="eyebrow-text mb-4">
@@ -56,7 +56,7 @@ export default function Hero() {
             Spaces That Feel Like Home
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="mb-8 max-w-2xl text-xl font-medium text-text-muted dark:text-text-muted-dark">
+          <motion.p variants={itemVariants} className="mb-8 max-w-2xl text-lg font-medium text-text-muted sm:text-xl dark:text-text-muted-dark">
             Transform your space into a masterpiece with our expert interior design services
           </motion.p>
 
@@ -70,12 +70,12 @@ export default function Hero() {
           </motion.div>
 
           {/* Trust Strip */}
-          <motion.div variants={itemVariants} className="grid max-w-2xl grid-cols-3 gap-4 border-[3px] border-border bg-surface p-6 text-center text-text-primary shadow-lg dark:border-border-dark dark:bg-surface-dark dark:text-text-primary-dark">
+          <motion.div variants={itemVariants} className="grid max-w-2xl grid-cols-1 gap-4 border-[3px] border-border bg-surface p-4 text-center text-text-primary shadow-lg sm:grid-cols-3 sm:p-6 dark:border-border-dark dark:bg-surface-dark dark:text-text-primary-dark">
             <div>
               <div className="font-serif text-3xl font-black">{displayStats.experience}+</div>
               <div className="font-mono text-xs font-bold uppercase">Years Experience</div>
             </div>
-            <div className="border-x-[3px] border-border dark:border-border-dark">
+            <div className="border-y-[3px] border-border py-4 sm:border-x-[3px] sm:border-y-0 sm:py-0 dark:border-border-dark">
               <div className="font-serif text-3xl font-black">{GOOGLE_RATING}★</div>
               <div className="font-mono text-xs font-bold uppercase">{displayStats.reviews} Google Reviews</div>
             </div>
@@ -86,7 +86,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <motion.div variants={itemVariants} className="relative mx-auto w-full max-w-xl rotate-[-1.5deg] border-[3px] border-border bg-surface p-3 shadow-lg dark:border-border-dark dark:bg-surface-dark">
+        <motion.div variants={itemVariants} className="relative mx-auto w-[calc(100%-8px)] max-w-xl rotate-0 border-[3px] border-border bg-surface p-3 shadow-lg sm:w-full sm:rotate-[-1.5deg] dark:border-border-dark dark:bg-surface-dark">
           <img
             src="/images/Hero_image.jpg"
             alt="Interior Design"

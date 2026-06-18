@@ -24,7 +24,7 @@ export default function WhyChooseUs() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ staggerChildren: 0.1 }}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2"
         >
           {USP_ITEMS.map((item, index) => {
             const IconComponent = Icons[item.icon as keyof typeof Icons] as LucideIcon | undefined
@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: index * 0.1 }}
-                className="flex gap-4"
+                className="flex gap-3 sm:gap-4"
               >
                 <div className="flex-shrink-0">
                   <div className="flex h-12 w-12 items-center justify-center border-[3px] border-border bg-accent-secondary shadow-sm dark:border-border-dark">

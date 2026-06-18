@@ -55,7 +55,7 @@ export default function About() {
             <em>"{BUSINESS_TAGLINE}."</em> Trusted locally with a {GOOGLE_RATING} star Google rating from {GOOGLE_REVIEWS} reviews and {FACEBOOK_LIKES} Facebook likes.
           </p>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
             <div className="card-base">
               <div className="text-3xl font-bold text-accent-primary">{stats.years}+</div>
               <div className="text-sm text-text-muted dark:text-text-muted-dark">Years Active</div>

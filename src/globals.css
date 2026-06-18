@@ -33,7 +33,7 @@
 
 @layer components {
   .section-padding {
-    @apply px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32;
+    @apply px-4 py-12 sm:px-6 sm:py-20 lg:px-8 lg:py-32;
   }
 
   .container-max {
@@ -45,11 +45,11 @@
   }
 
   .button-primary {
-    @apply inline-flex items-center justify-center border-[3px] border-border bg-accent-primary px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider text-text-primary shadow-lg transition-all duration-150 ease-out hover:translate-x-1 hover:translate-y-1 hover:shadow-sm dark:border-border-dark dark:bg-accent-primary-dark focus:outline-none focus-visible:ring-[3px] focus-visible:ring-accent-tertiary;
+    @apply inline-flex min-h-11 items-center justify-center border-[3px] border-border bg-accent-primary px-5 py-3 font-mono text-sm font-bold uppercase tracking-wider text-text-primary shadow-lg transition-all duration-150 ease-out hover:translate-x-1 hover:translate-y-1 hover:shadow-sm sm:px-6 dark:border-border-dark dark:bg-accent-primary-dark focus:outline-none focus-visible:ring-[3px] focus-visible:ring-accent-tertiary;
   }
 
   .button-secondary {
-    @apply inline-flex items-center justify-center border-[3px] border-border bg-accent-secondary px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider text-text-primary shadow-lg transition-all duration-150 ease-out hover:translate-x-1 hover:translate-y-1 hover:shadow-sm dark:border-border-dark dark:text-text-primary focus:outline-none focus-visible:ring-[3px] focus-visible:ring-accent-tertiary;
+    @apply inline-flex min-h-11 items-center justify-center border-[3px] border-border bg-accent-secondary px-5 py-3 font-mono text-sm font-bold uppercase tracking-wider text-text-primary shadow-lg transition-all duration-150 ease-out hover:translate-x-1 hover:translate-y-1 hover:shadow-sm sm:px-6 dark:border-border-dark dark:text-text-primary focus:outline-none focus-visible:ring-[3px] focus-visible:ring-accent-tertiary;
   }
 
   .card-base {
@@ -61,11 +61,11 @@
   }
 
   .heading-xl {
-    @apply font-serif text-5xl font-black uppercase leading-none tracking-normal sm:text-7xl lg:text-8xl;
+    @apply font-serif text-4xl font-black uppercase leading-none tracking-normal sm:text-7xl lg:text-8xl;
   }
 
   .heading-lg {
-    @apply font-serif text-4xl font-black uppercase leading-none tracking-normal sm:text-5xl;
+    @apply font-serif text-3xl font-black uppercase leading-none tracking-normal sm:text-5xl;
   }
 
   .heading-md {
@@ -81,7 +81,17 @@
   }
 
   .eyebrow-text {
-    @apply inline-flex border-[3px] border-border bg-accent-secondary px-3 py-1 font-mono text-xs font-bold uppercase tracking-widest text-text-primary shadow-sm dark:border-border-dark;
+    @apply inline-flex min-h-11 items-center border-[3px] border-border bg-accent-secondary px-3 py-1 font-mono text-xs font-bold uppercase tracking-widest text-text-primary shadow-sm dark:border-border-dark;
+  }
+}
+
+@layer utilities {
+  @media (max-width: 1023px) {
+    .shadow-lg {
+      --tw-shadow: 4px 4px 0 var(--border-color);
+      --tw-shadow-colored: 4px 4px 0 var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
   }
 }
 

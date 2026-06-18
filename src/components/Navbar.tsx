@@ -39,7 +39,7 @@ export default function Navbar() {
         isScrolled ? 'border-b-[3px] border-border dark:border-border-dark' : ''
       }`}
     >
-      <div className="container-max flex items-center justify-between h-20 px-4">
+      <div className="container-max flex h-20 items-center justify-between gap-3 px-4">
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -74,7 +74,7 @@ export default function Navbar() {
         </div>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <ThemeToggle />
           <a href="#contact" className="hidden sm:flex button-primary py-2 px-4 text-sm">
             Free Consultation
@@ -83,7 +83,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2"
+            className="min-h-11 min-w-11 p-2 lg:hidden"
             aria-label="Toggle menu"
           >
             {isOpen ? <X /> : <Menu />}

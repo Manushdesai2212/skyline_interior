@@ -3,7 +3,7 @@ export const BUSINESS_EMAIL = "skylineinterior108@gmail.com"
 export const BUSINESS_PHONE = "+91 96873 57996"
 export const BUSINESS_PHONE_HREF = BUSINESS_PHONE.replace(/\s/g, "")
 export const BUSINESS_WHATSAPP_NUMBER = "919687357996"
-export const BUSINESS_ADDRESS = "Radhe Signature, Opp. Sahajanand City, Kudasan, Gandhinagar - 382421"
+export const BUSINESS_ADDRESS = " Skyline Interior,Radhe Signature, Opp. Sahajanand City, Kudasan, Gandhinagar - 382421"
 export const BUSINESS_MAP_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(BUSINESS_ADDRESS)}&output=embed`
 export const WORKING_HOURS = "Closes at 6 PM"
 export const BUSINESS_TAGLINE = "We do all kind of interior, architecture, set design, landscape work"
