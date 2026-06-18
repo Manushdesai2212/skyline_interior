@@ -7,7 +7,7 @@ const GOOGLE_MAPS_URL =
   'https://www.google.com/maps/place/Skyline+Interior/@22.1618508,72.8441906,15z/data=!4m6!3m5!1s0x395c2a140597b4b1:0x86b0c581889e7fa3!8m2!3d22.1618508!4d72.863245!16s%2Fg%2F11gdmm94lf'
 
 const GOOGLE_REVIEW_URL =
-  'https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID'
+  'https://www.google.com/search?q=skyline+interior&rlz=1C5CHFA_enIN1117IN1117&oq=sky&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIVCAEQLhhDGMcBGLEDGNEDGIAEGIoFMgYIAhBFGDsyDAgDECMYJxjwBRieBjIYCAQQLhhDGMcBGLEDGMkDGNEDGIAEGIoFMg8IBRAAGEMYsQMYgAQYigUyDAgGEAAYQxiABBiKBTIMCAcQABhDGIAEGIoFMg8ICBAAGEMYsQMYgAQYigXSAQkxOTQ0ajBqMTWoAgiwAgHxBWbBOVhAvH15&sourceid=chrome&ie=UTF-8#sv=CAESzQEKuQEStgEKd0FNbjMteVNycEJaYzBjNnIySUFWZU9YWWlQQXM5dXV2cUxmRVMwY1hnQXdKdzRtMjh5WDlfT2x2VU1mbVhDblhqWjVOV3Rmb20zWmdfZDlybDVXd3BpUmc5Uk9jelpFV2l2MlM5aTZDNU5QUkNlRDRTaWJjVlg4EhdzNU16YXByR0pyQ2duZXNQMExhVjhBURoiQUpLTEZtSlJtVjRaOE9ZcHhkTDZTQ045bHRoTWljNzd6URIEODA1MRoBMyoAMAA4AUAAGAAgpKS7VEoCEAI'
 
 export default function Testimonials() {
   const { ref, inView } = useInView({ triggerOnce: true })
