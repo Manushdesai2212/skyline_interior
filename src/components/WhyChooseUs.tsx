@@ -37,8 +37,8 @@ export default function WhyChooseUs() {
                 className="flex gap-4"
               >
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-full bg-accent-primary/10">
-                    {IconComponent && <IconComponent className="w-6 h-6 text-accent-primary" />}
+                  <div className="flex h-12 w-12 items-center justify-center border-[3px] border-border bg-accent-secondary shadow-sm dark:border-border-dark">
+                    {IconComponent && <IconComponent className="h-6 w-6 text-text-primary" />}
                   </div>
                 </div>
                 <div>

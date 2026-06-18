@@ -23,7 +23,7 @@ export default function Testimonials() {
         >
           <div className="eyebrow-text mb-4">Reviews</div>
 
-          <div className="mb-6 inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-border bg-surface px-5 py-2 text-sm font-semibold text-text-primary shadow-sm dark:border-border-dark dark:bg-surface-dark dark:text-text-primary-dark">
+          <div className="mb-6 inline-flex flex-wrap items-center justify-center gap-2 border-[3px] border-border bg-surface px-5 py-2 font-mono text-xs font-bold uppercase tracking-wider text-text-primary shadow-sm dark:border-border-dark dark:bg-surface-dark dark:text-text-primary-dark">
             <span className="flex items-center gap-0.5" aria-label={`${GOOGLE_RATING} stars rated on Google`}>
               {Array.from({ length: 5 }).map((_, index) => (
                 <Star
@@ -49,7 +49,7 @@ export default function Testimonials() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.2 }}
             className="card-base mx-auto flex max-w-2xl flex-col items-center gap-4 p-6 sm:flex-row sm:justify-center"
           >
             <a

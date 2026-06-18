@@ -31,26 +31,13 @@ export default function Hero() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background Image with Gradient */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop"
-          alt="Interior Design"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40" />
-      </div>
-
-      {/* Animated Blob */}
-      <motion.div
-        className="absolute top-20 right-10 w-72 h-72 bg-accent-primary/20 rounded-full filter blur-3xl animate-blob"
-        style={{ zIndex: 1 }}
-      />
+    <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-bg pt-20 dark:bg-bg-dark">
+      <div className="absolute right-8 top-28 h-32 w-32 border-[3px] border-border bg-accent-secondary shadow-lg dark:border-border-dark" />
+      <div className="absolute bottom-16 left-8 h-20 w-44 border-[3px] border-border bg-accent-tertiary shadow-lg dark:border-border-dark" />
 
       {/* Content */}
       <motion.div
@@ -58,43 +45,53 @@ export default function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        className="relative z-10 container-max px-4 text-center text-white"
+        className="container-max relative z-10 grid items-center gap-12 px-4 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:text-left"
       >
-        <motion.div variants={itemVariants} className="eyebrow-text text-white/80 mb-4">
-          Premium Interior Design
-        </motion.div>
+        <div>
+          <motion.div variants={itemVariants} className="eyebrow-text mb-4">
+            Premium Interior Design
+          </motion.div>
 
-        <motion.h1 variants={itemVariants} className="heading-xl text-white mb-6">
-          Spaces That Feel Like Home
-        </motion.h1>
+          <motion.h1 variants={itemVariants} className="heading-xl mb-6 text-text-primary dark:text-text-primary-dark">
+            Spaces That Feel Like Home
+          </motion.h1>
 
-        <motion.p variants={itemVariants} className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-          Transform your space into a masterpiece with our expert interior design services
-        </motion.p>
+          <motion.p variants={itemVariants} className="mb-8 max-w-2xl text-xl font-medium text-text-muted dark:text-text-muted-dark">
+            Transform your space into a masterpiece with our expert interior design services
+          </motion.p>
 
-        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <a href="#contact" className="button-primary">
-            Get a Free Quote
-          </a>
-          <a href="#portfolio" className="button-secondary">
-            View Our Work
-          </a>
-        </motion.div>
+          <motion.div variants={itemVariants} className="mb-12 flex flex-col gap-4 sm:flex-row lg:mb-16">
+            <a href="#contact" className="button-primary">
+              Get a Free Quote
+            </a>
+            <a href="#portfolio" className="button-secondary">
+              View Our Work
+            </a>
+          </motion.div>
 
-        {/* Trust Strip */}
-        <motion.div variants={itemVariants} className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-16 bg-white/10 backdrop-blur-md rounded-2xl p-6">
-          <div>
-            <div className="text-3xl font-bold text-white">{displayStats.experience}+</div>
-            <div className="text-sm text-white/80">Years Experience</div>
-          </div>
-          <div className="border-l border-r border-white/20">
-            <div className="text-3xl font-bold text-white">{GOOGLE_RATING}★</div>
-            <div className="text-sm text-white/80">{displayStats.reviews} Google Reviews</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-white">{displayStats.likes >= 3242 ? FACEBOOK_LIKES : displayStats.likes.toLocaleString()}</div>
-            <div className="text-sm text-white/80">Facebook Likes</div>
-          </div>
+          {/* Trust Strip */}
+          <motion.div variants={itemVariants} className="grid max-w-2xl grid-cols-3 gap-4 border-[3px] border-border bg-surface p-6 text-center text-text-primary shadow-lg dark:border-border-dark dark:bg-surface-dark dark:text-text-primary-dark">
+            <div>
+              <div className="font-serif text-3xl font-black">{displayStats.experience}+</div>
+              <div className="font-mono text-xs font-bold uppercase">Years Experience</div>
+            </div>
+            <div className="border-x-[3px] border-border dark:border-border-dark">
+              <div className="font-serif text-3xl font-black">{GOOGLE_RATING}★</div>
+              <div className="font-mono text-xs font-bold uppercase">{displayStats.reviews} Google Reviews</div>
+            </div>
+            <div>
+              <div className="font-serif text-3xl font-black">{displayStats.likes >= 3242 ? FACEBOOK_LIKES : displayStats.likes.toLocaleString()}</div>
+              <div className="font-mono text-xs font-bold uppercase">Facebook Likes</div>
+            </div>
+          </motion.div>
+        </div>
+
+        <motion.div variants={itemVariants} className="relative mx-auto w-full max-w-xl rotate-[-1.5deg] border-[3px] border-border bg-surface p-3 shadow-lg dark:border-border-dark dark:bg-surface-dark">
+          <img
+            src="/images/Hero_image.jpg"
+            alt="Interior Design"
+            className="aspect-[4/3] w-full border-[3px] border-border object-cover dark:border-border-dark"
+          />
         </motion.div>
       </motion.div>
 
@@ -104,7 +101,7 @@ export default function Hero() {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <ChevronDown className="w-8 h-8 text-white opacity-70" />
+        <ChevronDown className="h-8 w-8 text-text-primary opacity-70 dark:text-text-primary-dark" />
       </motion.div>
     </section>
   )

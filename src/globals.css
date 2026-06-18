@@ -1,12 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --border-color: #0A0A0A;
+  }
+
+  html.dark {
+    --border-color: #F5F5F5;
+  }
+
+  * {
+    border-radius: 0;
+  }
+
   body {
-    @apply bg-bg text-text-primary transition-colors duration-300;
+    @apply bg-bg text-text-primary font-sans transition-colors duration-150;
     font-feature-settings: 'rlig' 1 'calt' 1;
   }
 
@@ -29,39 +41,39 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-accent-primary to-accent-tertiary bg-clip-text text-transparent;
+    @apply bg-accent-secondary px-2 text-text-primary;
   }
 
   .button-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-2xl font-semibold text-white bg-accent-primary hover:bg-accent-primary/90 transition-all duration-200 hover:shadow-lg hover:scale-105;
+    @apply inline-flex items-center justify-center border-[3px] border-border bg-accent-primary px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider text-text-primary shadow-lg transition-all duration-150 ease-out hover:translate-x-1 hover:translate-y-1 hover:shadow-sm dark:border-border-dark dark:bg-accent-primary-dark focus:outline-none focus-visible:ring-[3px] focus-visible:ring-accent-tertiary;
   }
 
   .button-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-2xl font-semibold text-accent-primary bg-accent-primary/10 hover:bg-accent-primary/20 transition-all duration-200 hover:shadow-md;
+    @apply inline-flex items-center justify-center border-[3px] border-border bg-accent-secondary px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider text-text-primary shadow-lg transition-all duration-150 ease-out hover:translate-x-1 hover:translate-y-1 hover:shadow-sm dark:border-border-dark dark:text-text-primary focus:outline-none focus-visible:ring-[3px] focus-visible:ring-accent-tertiary;
   }
 
   .card-base {
-    @apply bg-surface dark:bg-surface-dark border border-border dark:border-border-dark rounded-2xl p-6 transition-all duration-300;
+    @apply border-[3px] border-border bg-surface p-6 shadow-lg transition-all duration-150 ease-out dark:border-border-dark dark:bg-surface-dark;
   }
 
   .card-hover {
-    @apply card-base hover:shadow-lg hover:scale-105 hover:border-accent-primary/50;
+    @apply card-base hover:translate-x-1 hover:translate-y-1 hover:shadow-sm;
   }
 
   .heading-xl {
-    @apply text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight;
+    @apply font-serif text-5xl font-black uppercase leading-none tracking-normal sm:text-7xl lg:text-8xl;
   }
 
   .heading-lg {
-    @apply text-3xl sm:text-4xl font-serif font-bold;
+    @apply font-serif text-4xl font-black uppercase leading-none tracking-normal sm:text-5xl;
   }
 
   .heading-md {
-    @apply text-2xl sm:text-3xl font-serif font-semibold;
+    @apply font-serif text-2xl font-black uppercase leading-tight tracking-normal sm:text-3xl;
   }
 
   .heading-sm {
-    @apply text-xl sm:text-2xl font-serif font-semibold;
+    @apply font-serif text-xl font-black uppercase leading-tight tracking-normal sm:text-2xl;
   }
 
   .body-text {
@@ -69,7 +81,7 @@
   }
 
   .eyebrow-text {
-    @apply text-sm font-semibold uppercase tracking-widest text-accent-primary;
+    @apply inline-flex border-[3px] border-border bg-accent-secondary px-3 py-1 font-mono text-xs font-bold uppercase tracking-widest text-text-primary shadow-sm dark:border-border-dark;
   }
 }
 
@@ -110,7 +122,7 @@
 
 @layer utilities {
   .animate-fade-up {
-    animation: fade-up 0.5s ease-out;
+    animation: fade-up 0.2s ease-out;
   }
 
   .animate-blob {

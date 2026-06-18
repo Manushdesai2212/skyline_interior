@@ -5,32 +5,23 @@ export default function CTABanner() {
   const { ref, inView } = useInView({ triggerOnce: true })
 
   return (
-    <section className="relative section-padding bg-gradient-to-r from-accent-secondary to-accent-tertiary overflow-hidden">
-      {/* Animated Background Blobs */}
-      <motion.div
-        className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
-        animate={{ scale: [1, 1.1, 1], y: [-50, 50, -50] }}
-        transition={{ duration: 10, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
-        animate={{ scale: [1.1, 1, 1.1], y: [50, -50, 50] }}
-        transition={{ duration: 10, repeat: Infinity }}
-      />
+    <section className="relative overflow-hidden border-y-[3px] border-border bg-accent-secondary section-padding dark:border-border-dark">
+      <div className="absolute right-8 top-8 h-28 w-40 border-[3px] border-border bg-accent-primary shadow-lg dark:border-border" />
+      <div className="absolute bottom-8 left-8 h-24 w-24 border-[3px] border-border bg-accent-tertiary shadow-lg dark:border-border" />
 
       <div ref={ref} className="container-max text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.2 }}
         >
-          <h2 className="heading-lg text-white mb-4">Ready to Transform Your Space?</h2>
-          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+          <h2 className="heading-lg mb-4 text-text-primary">Ready to Transform Your Space?</h2>
+          <p className="mx-auto mb-8 max-w-2xl text-lg font-medium text-text-primary">
             Let's bring your interior design vision to life with our expert team and personalized approach.
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-2xl font-semibold text-accent-secondary bg-white hover:bg-white/90 transition-all duration-200 hover:shadow-xl text-lg"
+            className="button-primary px-8 py-4 text-lg"
           >
             Book Your Free Consultation
           </a>

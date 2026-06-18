@@ -20,7 +20,7 @@ export default function Process() {
 
         <div className="relative">
           {/* Timeline Line - Desktop */}
-          <div className="hidden lg:block absolute top-1/4 left-0 right-0 h-1 bg-gradient-to-r from-accent-primary via-accent-secondary to-accent-tertiary" />
+          <div className="absolute left-0 right-0 top-1/4 hidden h-[3px] bg-border dark:bg-border-dark lg:block" />
 
           <div className="grid lg:grid-cols-5 gap-8">
             {PROCESS_STEPS.map((step, index) => (
@@ -33,8 +33,8 @@ export default function Process() {
               >
                 <div className="flex flex-col items-center">
                   <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="w-16 h-16 rounded-full bg-gradient-to-br from-accent-primary to-accent-tertiary flex items-center justify-center text-white font-bold text-2xl mb-4 relative z-10"
+                    whileHover={{ x: 4, y: 4 }}
+                    className="relative z-10 mb-4 flex h-16 w-16 items-center justify-center border-[3px] border-border bg-accent-primary font-serif text-2xl font-black text-text-primary shadow-lg dark:border-border-dark dark:bg-accent-primary-dark"
                   >
                     {index + 1}
                   </motion.div>

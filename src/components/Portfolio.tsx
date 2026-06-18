@@ -35,12 +35,12 @@ export default function Portfolio() {
               <motion.button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`px-6 py-2 rounded-full transition-all ${
+                whileHover={{ x: 4, y: 4 }}
+                whileTap={{ x: 6, y: 6 }}
+                className={`px-6 py-2 transition-all duration-150 ${
                   activeCategory === category
                     ? 'button-primary'
-                    : 'bg-bg dark:bg-bg-dark text-text-primary dark:text-text-primary-dark border border-border dark:border-border-dark hover:border-accent-primary'
+                    : 'border-[3px] border-border bg-bg font-mono text-xs font-bold uppercase tracking-wider text-text-primary shadow-lg hover:translate-x-1 hover:translate-y-1 hover:shadow-sm dark:border-border-dark dark:bg-bg-dark dark:text-text-primary-dark'
                 }`}
               >
                 {category}
@@ -62,20 +62,19 @@ export default function Portfolio() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ x: 4, y: 4 }}
                 onClick={() => setSelectedProject(project)}
-                className="relative overflow-hidden rounded-2xl cursor-pointer group"
+                className="group relative cursor-pointer overflow-hidden border-[3px] border-border shadow-lg dark:border-border-dark"
               >
                 <img
                   src={project.image}
                   alt={project.title}
                   loading="lazy"
-                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="h-80 w-full object-cover transition-transform duration-150 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white translate-y-full group-hover:translate-y-0 transition-transform">
+                <div className="absolute inset-x-0 bottom-0 border-t-[3px] border-border bg-accent-secondary p-4 text-text-primary translate-y-full transition-transform duration-150 group-hover:translate-y-0 dark:border-border">
                   <h3 className="font-semibold">{project.title}</h3>
-                  <p className="text-sm text-white/80">{project.category}</p>
+                  <p className="font-mono text-xs font-bold uppercase">{project.category}</p>
                 </div>
               </motion.div>
             ))}
@@ -97,17 +96,17 @@ export default function Portfolio() {
                 animate={{ scale: 1 }}
                 exit={{ scale: 0.8 }}
                 onClick={e => e.stopPropagation()}
-                className="relative max-w-4xl w-full"
+                className="relative w-full max-w-4xl"
               >
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
-                  className="w-full h-auto rounded-lg"
+                  className="h-auto w-full border-[3px] border-white"
                 />
                 <div className="absolute top-4 right-4">
                   <button
                     onClick={() => setSelectedProject(null)}
-                    className="p-2 bg-white rounded-full hover:bg-gray-200"
+                    className="border-[3px] border-border bg-white p-2 text-text-primary shadow-lg transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:shadow-sm"
                   >
                     <X className="w-6 h-6" />
                   </button>
@@ -116,7 +115,7 @@ export default function Portfolio() {
                 <div className="absolute top-1/2 -left-16 transform -translate-y-1/2">
                   <button
                     onClick={() => setSelectedProject(prevProject)}
-                    className="p-2 bg-white rounded-full hover:bg-gray-200"
+                    className="border-[3px] border-border bg-white p-2 text-text-primary shadow-lg transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:shadow-sm"
                   >
                     <ChevronLeft className="w-6 h-6" />
                   </button>
@@ -125,7 +124,7 @@ export default function Portfolio() {
                 <div className="absolute top-1/2 -right-16 transform -translate-y-1/2">
                   <button
                     onClick={() => setSelectedProject(nextProject)}
-                    className="p-2 bg-white rounded-full hover:bg-gray-200"
+                    className="border-[3px] border-border bg-white p-2 text-text-primary shadow-lg transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:shadow-sm"
                   >
                     <ChevronRight className="w-6 h-6" />
                   </button>

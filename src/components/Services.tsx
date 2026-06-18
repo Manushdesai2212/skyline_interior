@@ -50,8 +50,8 @@ export default function Services() {
                 variants={itemVariants}
                 className="card-hover group"
               >
-                <div className="p-4 bg-accent-primary/10 rounded-2xl w-fit mb-4 group-hover:bg-accent-primary/20 transition-colors">
-                  {IconComponent && <IconComponent className="w-8 h-8 text-accent-primary" />}
+                <div className="mb-4 w-fit border-[3px] border-border bg-accent-secondary p-4 shadow-sm transition-all duration-150 group-hover:translate-x-1 group-hover:translate-y-1 group-hover:shadow-none dark:border-border-dark">
+                  {IconComponent && <IconComponent className="h-8 w-8 text-text-primary" />}
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
                 <p className="text-text-muted dark:text-text-muted-dark">{service.description}</p>

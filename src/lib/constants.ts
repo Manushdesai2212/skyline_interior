@@ -14,9 +14,10 @@ export const FACEBOOK_LIKES = "3,242"
 export const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
+  { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
+  { href: '#style-quiz', label: 'Find Your Style' },
   { label: "Testimonials", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },

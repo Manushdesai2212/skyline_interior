@@ -26,18 +26,9 @@ export default function Stats() {
   }, [inView])
 
   return (
-    <section className="relative section-padding bg-gradient-to-r from-accent-primary to-accent-tertiary overflow-hidden">
-      {/* Animated Background Blobs */}
-      <motion.div
-        className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
-        animate={{ scale: [1, 1.2, 1], x: [0, 50, 0] }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
-        animate={{ scale: [1.2, 1, 1.2], x: [-50, 0, -50] }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
+    <section className="relative overflow-hidden border-y-[3px] border-border bg-accent-primary section-padding dark:border-border-dark dark:bg-accent-primary-dark">
+      <div className="absolute right-8 top-8 h-32 w-32 border-[3px] border-border bg-accent-secondary shadow-lg dark:border-border" />
+      <div className="absolute bottom-8 left-8 h-24 w-48 border-[3px] border-border bg-accent-tertiary shadow-lg dark:border-border" />
 
       <div ref={ref} className="container-max relative z-10">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -47,7 +38,7 @@ export default function Stats() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.1 }}
-              className="text-center text-white"
+              className="border-[3px] border-border bg-surface p-6 text-center text-text-primary shadow-lg dark:border-border dark:bg-bg"
             >
               <div className="text-5xl sm:text-6xl font-bold mb-2">
                 {'display' in stat ? stat.display : `${displayValues[index]}${stat.suffix ?? ''}`}

@@ -44,10 +44,10 @@ export default function Footer() {
           {/* Brand */}
           <motion.div variants={itemVariants}>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-full bg-accent-primary flex items-center justify-center font-bold">
+              <div className="flex h-10 w-10 items-center justify-center border-[3px] border-white bg-accent-primary font-mono font-bold shadow-sm">
                 S
               </div>
-              <span className="font-serif font-bold text-lg">{BUSINESS_NAME}</span>
+              <span className="font-serif text-lg font-black uppercase">{BUSINESS_NAME}</span>
             </div>
             <p className="text-white/70 dark:text-text-muted-dark">
               Premium interior design studio transforming spaces into experiences.
@@ -103,7 +103,7 @@ export default function Footer() {
         {/* Social Links & Copyright */}
         <motion.div
           variants={itemVariants}
-          className="border-t border-white/20 pt-8 flex flex-col sm:flex-row items-center justify-between"
+          className="flex flex-col items-center justify-between border-t-[3px] border-white pt-8 sm:flex-row"
         >
           <div className="flex gap-4 mb-4 sm:mb-0">
             {SOCIAL_LINKS.map((link) => (
@@ -112,7 +112,7 @@ export default function Footer() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                className="border-[3px] border-white bg-transparent p-2 transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:bg-accent-secondary hover:text-text-primary"
                 aria-label={link.label}
               >
                 {getIcon(link.icon)}

@@ -28,13 +28,13 @@ export default function About() {
           ref={ref}
           initial={{ opacity: 0, x: -50 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.2 }}
           className="relative"
         >
           <img
             src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=600&fit=crop"
             alt="About Skyline Interior"
-            className="w-full rounded-3xl object-cover"
+            className="w-full border-[3px] border-border object-cover shadow-lg dark:border-border-dark"
           />
           
         </motion.div>
@@ -42,7 +42,7 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.2 }}
         >
           <div className="eyebrow-text mb-4">About Us</div>
           <h2 className="heading-lg mb-6">Crafting Spaces, Creating Experiences</h2>

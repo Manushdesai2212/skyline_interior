@@ -76,7 +76,7 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.2 }}
           >
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>
@@ -85,7 +85,7 @@ export default function Contact() {
                   type="text"
                   {...register('name')}
                   placeholder="Your name"
-                  className="w-full px-4 py-3 rounded-lg border border-border dark:border-border-dark bg-bg dark:bg-bg-dark focus:outline-none focus:border-accent-primary transition-colors"
+                  className="w-full border-[3px] border-border bg-bg px-4 py-3 transition-colors focus:border-accent-primary focus:outline-none dark:border-border-dark dark:bg-bg-dark"
                 />
                 {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
               </div>
@@ -96,7 +96,7 @@ export default function Contact() {
                   type="email"
                   {...register('email')}
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 rounded-lg border border-border dark:border-border-dark bg-bg dark:bg-bg-dark focus:outline-none focus:border-accent-primary transition-colors"
+                  className="w-full border-[3px] border-border bg-bg px-4 py-3 transition-colors focus:border-accent-primary focus:outline-none dark:border-border-dark dark:bg-bg-dark"
                 />
                 {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
               </div>
@@ -107,7 +107,7 @@ export default function Contact() {
                   type="tel"
                   {...register('phone')}
                   placeholder="+91 98765 43210"
-                  className="w-full px-4 py-3 rounded-lg border border-border dark:border-border-dark bg-bg dark:bg-bg-dark focus:outline-none focus:border-accent-primary transition-colors"
+                  className="w-full border-[3px] border-border bg-bg px-4 py-3 transition-colors focus:border-accent-primary focus:outline-none dark:border-border-dark dark:bg-bg-dark"
                 />
                 {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
               </div>
@@ -116,7 +116,7 @@ export default function Contact() {
                 <label className="block text-sm font-medium mb-2">Project Type</label>
                 <select
                   {...register('projectType')}
-                  className="w-full px-4 py-3 rounded-lg border border-border dark:border-border-dark bg-bg dark:bg-bg-dark focus:outline-none focus:border-accent-primary transition-colors"
+                  className="w-full border-[3px] border-border bg-bg px-4 py-3 transition-colors focus:border-accent-primary focus:outline-none dark:border-border-dark dark:bg-bg-dark"
                 >
                   <option value="">Select a project type</option>
                   <option value="residential">Residential</option>
@@ -136,7 +136,7 @@ export default function Contact() {
                   {...register('message')}
                   placeholder="Tell us about your project..."
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-border dark:border-border-dark bg-bg dark:bg-bg-dark focus:outline-none focus:border-accent-primary transition-colors resize-none"
+                  className="w-full resize-none border-[3px] border-border bg-bg px-4 py-3 transition-colors focus:border-accent-primary focus:outline-none dark:border-border-dark dark:bg-bg-dark"
                 />
                 {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
               </div>
@@ -168,7 +168,7 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.2 }}
             className="space-y-6"
           >
             {/* Contact Cards */}
@@ -215,11 +215,11 @@ export default function Contact() {
               src={BUSINESS_MAP_EMBED_URL}
               width="100%"
               height="300"
-              style={{ border: 0, borderRadius: '1rem' }}
+              style={{ borderRadius: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="rounded-2xl"
+              className="border-[3px] border-border shadow-lg dark:border-border-dark"
             />
           </motion.div>
         </div>

@@ -14,7 +14,7 @@ export default function WhatsAppButton() {
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-8 left-8 p-3 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors shadow-lg"
+      className="fixed bottom-8 left-8 border-[3px] border-border bg-accent-secondary p-3 text-text-primary shadow-lg transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:shadow-sm dark:border-border-dark"
       animate={{ y: [0, -10, 0] }}
       transition={{ duration: 2, repeat: Infinity }}
       aria-label="Chat on WhatsApp"

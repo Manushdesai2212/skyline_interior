@@ -14,19 +14,21 @@ import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import ScrollToTop from '@/components/ScrollToTop'
+import StyleQuiz from '@/components/stylequize'
 
 function App() {
   return (
     <ThemeProvider attribute="class" defaultTheme="light">
-      <div className="min-h-screen bg-bg dark:bg-bg-dark text-text-primary dark:text-text-primary-dark transition-colors duration-300">
+      <div className="min-h-screen bg-bg text-text-primary transition-colors duration-150 dark:bg-bg-dark dark:text-text-primary-dark">
         <Navbar />
         <main>
           <Hero />
           <About />
+          <Portfolio />
           <Services />
           <WhyChooseUs />
           <Process />
-          <Portfolio />
+          <StyleQuiz />
           <Stats />
           <Testimonials />
           <FAQ />

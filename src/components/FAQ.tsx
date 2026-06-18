@@ -56,7 +56,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="pt-4 border-t border-border dark:border-border-dark mt-4">
+                    <div className="mt-4 border-t-[3px] border-border pt-4 dark:border-border-dark">
                       <p className="text-text-muted dark:text-text-muted-dark">{item.answer}</p>
                     </div>
                   </motion.div>
